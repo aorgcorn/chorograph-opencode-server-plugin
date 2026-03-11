@@ -8,7 +8,7 @@ import SwiftUI
 public final class OpenCodeServerPlugin: ChorographPlugin, @unchecked Sendable {
 
     public let manifest = PluginManifest(
-        id: "com.chorograph.opencode-server",
+        id: "com.chorograph.plugin.opencode-server",
         displayName: "OpenCode Server",
         description: "Connects to a locally running opencode server via REST/SSE.",
         version: "1.0.0",
@@ -25,8 +25,8 @@ public final class OpenCodeServerPlugin: ChorographPlugin, @unchecked Sendable {
 
 // MARK: - C-ABI factory (required for dlopen-based loading)
 
-@_cdecl("chorographPluginFactory")
-public func chorographPluginFactory() -> UnsafeMutableRawPointer {
+@_cdecl("chorograph_plugin_create")
+public func chorographPluginCreate() -> UnsafeMutableRawPointer {
     let plugin = OpenCodeServerPlugin()
     return Unmanaged.passRetained(plugin as AnyObject).toOpaque()
 }
