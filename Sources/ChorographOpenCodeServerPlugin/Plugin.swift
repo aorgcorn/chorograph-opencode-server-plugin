@@ -19,9 +19,7 @@ public final class OpenCodeServerPlugin: ChorographPlugin, @unchecked Sendable {
 
     public func bootstrap(context: any PluginContextProviding) async throws {
         context.registerProvider(OpenCodeServerProvider())
-        context.registerSettingsPanel(title: "OpenCode Server") {
-            OpenCodeServerSettingsView()
-        }
+        context.registerSettingsPanel(title: "OpenCode Server", AnyView(OpenCodeServerSettingsView()))
     }
 }
 
