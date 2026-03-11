@@ -11,7 +11,7 @@ public final class OpenCodeServerPlugin: ChorographPlugin, @unchecked Sendable {
         id: "com.chorograph.plugin.opencode-server",
         displayName: "OpenCode Server",
         description: "Connects to a locally running opencode server via REST/SSE.",
-        version: "1.0.0",
+        version: "1.0.1",
         capabilities: [.aiProvider, .settingsPanel]
     )
 
